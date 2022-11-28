@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_root_path"
+    android:fitsSystemWindows="true">
+
+  <include
+      android:id="@+id/appbar_view_icl"
+      layout="@layout/appbar_view_transparent"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:paddingBottom="50dp"
+      app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/progressbar"
+        android:paddingVertical="4dp"
+        android:paddingHorizontal="4dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:orientation="horizontal"
+        tools:itemCount="2"
+        tools:listitem="@layout/movie_item_view" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:indeterminateDrawable="@drawable/progress_drawable"
+        android:indeterminate="true"
+        android:layout_marginTop="@dimen/dimen_margin_half"
+        android:layout_marginStart="@dimen/dimen_margin_half"
+        android:layout_marginEnd="@dimen/dimen_margin_half"
+        android:layout_marginBottom="@dimen/dimen_margin_half" />
+
+  </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

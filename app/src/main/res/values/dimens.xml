@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="dimen_height_menu_icon">40dp</dimen>
+  <dimen name="_10dp">5dp</dimen>
+  <dimen name="recycler_view_item_width">50dp</dimen>
+  <dimen name="card_view_margin">7dp</dimen>
+  <dimen name="card_radius">4dp</dimen>
+  <dimen name="bg_cover_height">180dp</dimen>
+  <dimen name="_8dp">8dp</dimen>
+  <dimen name="divider_size">8dp</dimen>
+  <dimen name="_4dp">4dp</dimen>
+  <dimen name="space_content_vertical">16dp</dimen>
+  <dimen name="space_content_horizontal">16dp</dimen>
+  <dimen name="button_height_material_button">55dp</dimen>
+  <dimen name="edit_text_round_corner">10dp</dimen>
+  <dimen name="dimen_button_min_height">48dp</dimen>
+  <dimen name="dimen_rounded_button">6dp</dimen>
+  <dimen name="dimen_dialog_corner_radius">18dp</dimen>
+  <dimen name="dimen_card_corner_radius">8dp</dimen>
+  <dimen name="dimen_card_elevation">0dp</dimen>
+  <dimen name="dimen_margin_tab_item">10dp</dimen>
+  <dimen name="dimen_margin_tab_item_half">5dp</dimen>
+  <dimen name="dimen_margin_semicolon">5dp</dimen>
+  <dimen name="dimen_margin">14dp</dimen>
+  <dimen name="dimen_margin_half">7dp</dimen>
+  <dimen name="dimen_margin_double">20dp</dimen>
+  <dimen name="dimen_font_bottom_menu_item_active">12dp</dimen>
+  <dimen name="dimen_font_bottom_menu_item">10.5dp</dimen>
+  <dimen name="dimen_font_chip">13dp</dimen>
+  <dimen name="dimen_tab_font_size">12dp</dimen>
+  <dimen name="dimen_button_font_size">13.5dp</dimen>
+  <dimen name="dimen_button_font_size_small">12dp</dimen>
+  <dimen name="dimen_font_note">11dp</dimen>
+  <dimen name="dimen_font_size_very_small">11dp</dimen>
+  <dimen name="dimen_font_size_small">12dp</dimen>
+  <dimen name="dimen_font_size_normal">13dp</dimen>
+  <dimen name="dimen_font_size_normal_large">14dp</dimen>
+  <dimen name="dimen_font_size_large">17dp</dimen>
+  <dimen name="dimen_font_size_very_large">20dp</dimen>
+  <dimen name="dimen_font_number_size">22dp</dimen>
+  <dimen name="dimen_font_currency_size">14dp</dimen>
+  <dimen name="dimen_font_size_card_title">14dp</dimen>
+  <dimen name="dimen_font_size_toolbar">16dp</dimen>
+
+  <dimen name="divider_height">8dp</dimen>
+  <dimen name="dimen_round_edit_text">8dp</dimen>
+  <dimen name="dimen_menu_corner_radius">10dp</dimen>
+  <dimen name="dimen_menu_stroke_width">2dp</dimen>
+  <dimen name="dimen_menu_padding">14dp</dimen>
+  <dimen name="dimen_round_window">10dp</dimen>
+
+</resources>

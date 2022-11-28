@@ -1,0 +1,45 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+  <style name="DialogAnimation">
+    <item name="android:windowEnterAnimation">@anim/slide_up_open_dialog</item>
+    <item name="android:windowExitAnimation">@anim/slide_down_close_dialog</item>
+  </style>
+
+  <style name="BottomSheetDialogStyle" parent="@android:style/Theme.Dialog">
+    <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <!--    <item name="android:windowContentOverlay">@null</item>-->
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:statusBarColor">@android:color/transparent</item>
+  </style>
+
+  <style name="DialogSemiTransparentTheme">
+    <item name="android:windowBackground">@color/colorBgDialogSemiTransparentBlack</item>
+    <!--    <item name="android:windowContentOverlay">@null</item>-->
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:statusBarColor">@android:color/transparent</item>
+  </style>
+
+  <style name="GuideDialogTheme">
+    <item name="android:windowBackground">@android:color/transparent</item>
+<!--    <item name="android:windowContentOverlay">@null</item>-->
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:statusBarColor">@android:color/transparent</item>
+  </style>
+
+  <style name="DialogTransparentTheme">
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <!--    <item name="android:windowContentOverlay">@null</item>-->
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:statusBarColor">@android:color/transparent</item>
+  </style>
+
+  <style name="ShimmerDialogStyle">
+    <item name="android:windowBackground">@android:color/white</item>
+    <!--    <item name="android:windowContentOverlay">@null</item>-->
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:statusBarColor">@android:color/transparent</item>
+  </style>
+
+</resources>
+
+

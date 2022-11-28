@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+  <style name="AppSearchView" parent="Widget.AppCompat.SearchView" >
+    <item name="android:fontFamily">@font/font_primary</item>
+    <item name="android:textSize">@dimen/dimen_font_size_normal</item>
+  </style>
+
+  <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+    <item name="searchIcon">@drawable/ic_search</item>
+    <item name="closeIcon">@drawable/ic_close_circle</item>
+    <item name="android:fontFamily">@font/font_primary</item>
+    <item name="android:textSize">@dimen/dimen_font_size_normal</item>
+    <item name="android:textColorHint">#4D000000</item>
+    <item name="android:tint">@color/colorHint</item>
+    <item name="android:textColor">@color/colorPrimaryText</item>
+  </style>
+
+</resources>
+
+

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorAccent">#F7D08A</color>
+  <color name="colorPrimary">#146FB8</color>
+  <color name="colorPrimaryLight">#ADCEFF</color>
+  <color name="colorPrimarySoft">#E5F0FF</color>
+  <color name="colorPrimaryDark">#11568E</color>
+  <color name="colorPrimaryText">#272727</color>
+  <color name="colorSecondaryText">#4C4C4C</color>
+  <color name="colorSecondary">#FF9800</color>
+  <color name="colorSecondaryDark">#D88405</color>
+  <color name="colorMovieBackground">#0B3353</color>
+
+  <color name="colorHint">#A7A7A7</color>
+
+  <color name="colorNews">#FFFBD9</color>
+  <color name="colorRed">#D64949</color>
+  <color name="colorRedDark">#BB3434</color>
+  <color name="colorRipplePrimary">#1A2196F3</color>
+  <color name="colorRippleSecondary">#1AFFC107</color>
+  <color name="colorDivider">#e7e7e7</color>
+  <color name="colorEnabled">#0E8F0E</color>
+  <color name="colorDisabled">#9E9E9E</color>
+  <color name="colorDisabledEditTextBackground">#f7f7f7</color>
+  <color name="colorDisabledBackground">#d7d7d7</color>
+  <color name="colorLink">#FF9800</color>
+  <color name="colorGreyLv1">#d7d7d7</color>
+  <color name="colorGreyLv2">#9E9E9E</color>
+  <color name="colorGreyLv3">#6C6C6C</color>
+  <color name="colorVS1">#00A100</color>
+  <color name="colorVS2">#e44444</color>
+  <color name="colorVS3">#187BCA</color>
+  <color name="colorBgBadge">#FF5722</color>
+  <color name="colorBgSwipeRefresh">#FFFFFF</color>
+  <color name="colorBgMitra">#FFE69C</color>
+  <color name="colorFgMitra">#6E4412</color>
+  <color name="colorTranscludeToolbar">#99000000</color>
+  <color name="colorTranscludeStatusBar">#4D000000</color>
+
+  <color name="colorPaymentPending">#EC303F</color>
+  <color name="colorPaymentPendingDark">#D32432</color>
+  <color name="colorGreen">#38A13C</color>
+  <color name="colorSemiTransparentWhite">#BFFFFFFF</color>
+  <color name="colorSemiTransparentBlack">#66000000</color>
+  <color name="colorBgDialogSemiTransparentBlack">#80000000</color>
+  <color name="colorBgWindow">#f5f5f5</color>
+
+  <color name="colorShimmerGrey">#CFCFCF</color>
+
+  <color name="colorOVO">#4f04a4</color>
+  <color name="colorOVODark">#3C047C</color>
+  <color name="colorDANA">#008ceb</color>
+  <color name="colorDANADark">#0A7DCC</color>
+  <color name="colorGOPAY">#00aed6</color>
+  <color name="colorSHOPEE">#ee4e2c</color>
+  <color name="colorSHOPEEDark">#C63D20</color>
+  <color name="colorLINKAJA">#D52626</color>
+  <color name="colorLINKAJADark">#B12020</color>
+  <color name="colorMITRAPOINT">#FF9800</color>
+
+  <color name="colorBankBCA">#005FAF</color>
+  <color name="colorBankMandiri">#0D2B5B</color>
+  <color name="colorBankBNI">#007697</color>
+  <color name="colorBankBRI">#00529C</color>
+  <color name="colorBankCIMBNiaga">#7B131F</color>
+  <color name="colorBankPermata">#69921D</color>
+
+  <color name="colorINDOMARET">#DD1212</color>
+  <color name="colorALFAMART">#0048FF</color>
+
+  <color name="color_transclude_toolbar">#66000000</color>
+  <color name="color_transparent_toolbar">#00000000</color>
+
+  <color name="colorWarning">#FFA04D</color>
+  <color name="colorWarningText">#953F10</color>
+  <color name="colorSuccess">#38A13C</color>
+  <color name="colorInfo">#212121</color>
+  <color name="colorInfoText">#212121</color>
+  <color name="colorErrorBackground">#FFF1F1</color>
+  <color name="colorError">#F04E4E</color>
+  <color name="colorErrorDark">#DF4646</color>
+
+
+  <color name="colorStatusSuccess">#38A13C</color>
+  <color name="colorStatusFailed">#F65959</color>
+  <color name="colorStatusWaiting">#FFA04D</color>
+  <color name="colorStatusUnknown">#7A7A7A</color>
+
+  <color name="colorBannerBackground">#00b0d0</color>
+
+</resources>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_root_path">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:id="@+id/youtube_player_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:autoPlay="false" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/youtube_player_view"
+        android:fillViewport="true">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_movie_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#80000000"
+            android:paddingVertical="24dp"
+            android:paddingHorizontal="@dimen/dimen_margin"
+            android:ellipsize="end"
+            android:fontFamily="@font/font_primary_bold"
+            android:textStyle="bold"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:maxLines="3"
+            android:singleLine="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dimen_font_size_large" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="#80000000"
+            android:gravity="end"
+            android:orientation="horizontal"
+            android:paddingTop="0dp"
+            android:paddingBottom="@dimen/dimen_margin"
+            android:paddingRight="10dp"
+            android:paddingEnd="10dp"
+            android:paddingLeft="6dp"
+            android:paddingStart="6dp">
+
+          <androidx.appcompat.widget.AppCompatImageView
+              android:layout_width="20dp"
+              android:layout_height="20dp"
+              android:tint="#FFC107"
+              app:srcCompat="@drawable/ic_star_black_24dp" />
+
+          <TextView
+              android:id="@+id/tvVoteAverage"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="2dp"
+              android:layout_marginLeft="2dp"
+              android:text="0.0"
+              android:fontFamily="@font/font_primary_bold"
+              android:textColor="@android:color/white"
+              android:textSize="@dimen/dimen_font_size_normal" />
+
+          <androidx.appcompat.widget.AppCompatImageView
+              android:layout_width="20dp"
+              android:layout_height="20dp"
+              android:layout_marginStart="24dp"
+              android:layout_marginLeft="24dp"
+              android:tint="@color/colorSemiTransparentWhite"
+              app:srcCompat="@drawable/ic_like" />
+
+          <TextView
+              android:id="@+id/tvVoteCount"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="6dp"
+              android:layout_marginLeft="6dp"
+              android:text="0.0"
+              android:fontFamily="@font/font_primary_bold"
+              android:textColor="#00BCD4"
+              android:textSize="@dimen/dimen_font_size_normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_margin"
+            android:orientation="vertical">
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:paddingVertical="10dp"
+              android:paddingHorizontal="@dimen/dimen_margin"
+              android:text="Genre"
+              android:fontFamily="@font/font_primary_bold"
+              android:textStyle="bold"
+              android:textColor="#80FFFFFF"
+              android:textSize="@dimen/dimen_font_size_normal_large" />
+
+          <com.google.android.material.chip.ChipGroup
+              android:id="@+id/chip_group"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginHorizontal="@dimen/dimen_margin"
+              android:background="@android:color/transparent"
+              android:textAlignment="center"
+              app:singleSelection="true"
+              app:lineSpacing="0dp"
+              app:itemSpacing="0dp"
+              app:chipSpacingHorizontal="4dp"
+              app:chipSpacingVertical="2dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_description_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_margin"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="@dimen/dimen_margin"
+            android:text="Description"
+            android:fontFamily="@font/font_primary_bold"
+            android:textStyle="bold"
+            android:textColor="#80FFFFFF"
+            android:textSize="@dimen/dimen_font_size_normal_large" />
+
+        <TextView
+            android:id="@+id/tv_movie_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/dimen_margin"
+            android:ellipsize="end"
+            android:fontFamily="@font/font_primary"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:maxLines="3"
+            android:singleLine="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dimen_font_size_normal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_margin"
+            android:orientation="vertical">
+
+          <TextView
+              android:id="@+id/tv_review_title"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:paddingVertical="10dp"
+              android:paddingHorizontal="@dimen/dimen_margin"
+              android:text="Review"
+              android:fontFamily="@font/font_primary_bold"
+              android:textStyle="bold"
+              android:textColor="#80FFFFFF"
+              android:textSize="@dimen/dimen_font_size_normal_large" />
+
+          <androidx.recyclerview.widget.RecyclerView
+              android:id="@+id/recycler_view_reviews"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:paddingVertical="4dp"
+              android:paddingHorizontal="4dp"
+              android:nestedScrollingEnabled="false"
+              tools:itemCount="1"
+              tools:listitem="@layout/review_item_view" />
+
+          <RelativeLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/btn_next_reviews"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_button_min_height"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="14dp"
+                android:paddingRight="14dp"
+                android:layout_gravity="center"
+                android:text="Tampilkan lainnya"
+                android:textColor="@android:color/white"
+                android:background="?attr/selectableItemBackground"
+                android:textSize="@dimen/dimen_font_size_small"
+                android:fontFamily="@font/font_primary"
+                android:textStyle="normal"
+                android:gravity="center"
+                app:drawableRightCompat="@drawable/ic_chevron_down_double"
+                app:drawableTint="@android:color/white"
+                app:drawableEndCompat="@drawable/ic_chevron_down_double" />
+
+            <ProgressBar
+                android:id="@+id/progressbar_review"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:indeterminateDrawable="@drawable/progress_drawable"
+                android:indeterminate="true"
+                android:layout_marginTop="@dimen/dimen_margin_half"
+                android:layout_marginStart="@dimen/dimen_margin_half"
+                android:layout_marginEnd="@dimen/dimen_margin_half"
+                android:layout_marginBottom="@dimen/dimen_margin_half" />
+
+          </RelativeLayout>
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+  </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_root_path"
+    android:paddingBottom="50dp"
+    android:fitsSystemWindows="true">
+
+  <include
+      android:id="@+id/appbar_view_icl"
+      layout="@layout/appbar_view_transparent"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/dimen_margin"
+        android:text="Genre"
+        android:fontFamily="@font/font_primary_bold"
+        android:textStyle="bold"
+        android:textColor="#80FFFFFF"
+        android:textSize="@dimen/dimen_font_size_normal_large" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_title"
+        android:paddingVertical="@dimen/card_view_margin"
+        android:paddingHorizontal="@dimen/card_view_margin"
+        tools:itemCount="4"
+        tools:listitem="@layout/genre_item_view" />
+
+  </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,69 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="ButtonShadowStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">@dimen/button_height_material_button</item>
+        <item name="minHeight">@dimen/button_height_material_button</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:background">@null</item>
+        <item name="elevation">6dp</item>
+        <item name="android:elevation">6dp</item>
+        <item name="android:textSize">@dimen/dimen_button_font_size</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/font_primary_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="iconPadding">4dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="cornerRadius">@dimen/dimen_rounded_button</item>
+        <item name="rippleColor">@color/colorRipplePrimary</item>
+    </style>
+
+    <style name="ButtonWhiteStrokePrimary" parent="@style/ButtonShadowStyle">
+        <!--    <item name="android:background">@drawable/background_button_white</item>-->
+        <item name="android:textColor">@color/colorPrimary</item>
+        <!-- <item name="android:textSize">@dimen/dimen_button_font_size_small</item> -->
+        <item name="rippleColor">@color/colorPrimary</item>
+        <item name="backgroundTint">@color/color_enabled_white</item>
+        <item name="iconTint">@color/color_enabled_primary</item>
+        <item name="android:fontFamily">@font/font_primary_bold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="ButtonWhite" parent="@style/ButtonShadowStyle">
+        <!--    <item name="android:background">@drawable/background_button_white</item>-->
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/dimen_button_font_size_small</item>
+        <item name="rippleColor">@color/colorPrimary</item>
+        <item name="backgroundTint">@color/color_enabled_white</item>
+        <item name="iconTint">@color/color_enabled_primary</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="strokeColor">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/font_primary</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="ButtonPrimary" parent="@style/ButtonShadowStyle">
+        <!--    <item name="android:background">@drawable/background_button_primary</item>-->
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/dimen_font_size_normal_large</item>
+        <item name="backgroundTint">@color/color_enabled_primary</item>
+        <item name="rippleColor">@android:color/white</item>
+        <item name="iconTint">@color/color_enabled_white</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@android:color/white</item>
+    </style>
+
+</resources>
+
+
