@@ -26,7 +26,6 @@ class GenresActivity : BaseActivity(),
 
   lateinit var _binding: GenresActivityBinding
 
-  var dialogProgress: DialogProgress? = null
   lateinit var genresPresenter: GenresPresenter
   lateinit var genreAdapter: GenreAdapter
 

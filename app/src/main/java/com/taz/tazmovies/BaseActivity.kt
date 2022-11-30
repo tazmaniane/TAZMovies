@@ -6,10 +6,22 @@ import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
+import com.taz.tazmovies.utils.DialogProgress
 
 open class BaseActivity : AppCompatActivity() {
 
   private val TAG = this::class.java.simpleName
+
+  var dialogProgress: DialogProgress? = null
+
+  fun showLoading() {
+    if(dialogProgress == null) dialogProgress = DialogProgress(this)
+    dialogProgress?.show()
+  }
+
+  fun dismissLoading() {
+    dialogProgress?.dismiss()
+  }
 
   fun setFullScreen(isFullscreen: Boolean) {
     if (isFullscreen) setFullScreen()

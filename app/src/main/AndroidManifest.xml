@@ -16,7 +16,7 @@
       tools:ignore="LockedOrientationActivity"
       tools:targetApi="31">
     <activity
-        android:name=".genres.view.GenresActivity"
+        android:name=".main.MainActivity"
         android:theme="@style/AppTheme.NoActionBar"
         android:exported="true">
       <intent-filter>
@@ -40,6 +40,11 @@
         android:screenOrientation="portrait"/>
 
     <activity android:name=".movies.view.MovieDetailActivity"
+        android:theme="@style/AppTheme.NoActionBar"
+        android:screenOrientation="portrait"/>
+
+    <activity
+        android:name=".reviews.view.ReviewsActivity"
         android:theme="@style/AppTheme.NoActionBar"
         android:screenOrientation="portrait"/>
 

@@ -48,7 +48,6 @@ class MoviesActivity : BaseActivity(),
 
   lateinit var _binding: MoviesActivityBinding
 
-  var dialogProgress: DialogProgress? = null
   var moviesPresenter: MoviesPresenter? = null
   var movieDetailPresenter: MovieDetailPresenter? = null
   var moviesAdapter: MoviesAdapter? = null
@@ -163,7 +162,7 @@ class MoviesActivity : BaseActivity(),
     }
   }
 
-  override fun onLoading() {
+  override fun onLoadingGetMovies() {
     if(currentPage <= 1){
       if (dialogProgress == null) dialogProgress = DialogProgress(this)
       dialogProgress?.show()
@@ -174,18 +173,17 @@ class MoviesActivity : BaseActivity(),
     }
   }
 
-  override fun onDismissLoading() {
+  override fun onDismissLoadingGetMovies() {
     dialogProgress?.dismiss()
     _binding.progressbar.visibility = GONE
   }
 
   override fun onLoadingMovieDetail() {
-    if (dialogProgress == null) dialogProgress = DialogProgress(this)
-    dialogProgress?.show()
+    showLoading()
   }
 
   override fun onDismissLoadingMovieDetail() {
-    dialogProgress?.dismiss()
+    dismissLoading()
   }
 
   override fun onSuccessGetMovieDetail(movieDetailResult: MovieDetailResult) {

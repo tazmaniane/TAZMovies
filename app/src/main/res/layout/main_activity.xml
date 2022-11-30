@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_root_path"
+    android:paddingBottom="50dp"
+    android:fitsSystemWindows="true">
+
+  <include
+      android:id="@+id/appbar_view_icl"
+      layout="@layout/appbar_view_transparent"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_margin_tab_item_half"
+        android:background="@android:color/transparent"
+        app:tabPadding="0dp"
+        app:tabIndicatorHeight="3dp"
+        app:tabGravity="start"
+        app:tabMode="scrollable"
+        app:tabPaddingTop="0dp"
+        app:tabPaddingBottom="0dp"
+        app:tabPaddingStart="@dimen/dimen_margin_tab_item_half"
+        app:tabPaddingEnd="@dimen/dimen_margin_tab_item_half" />
+
+    <TextView
+        android:id="@+id/tv_genre_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tab_layout"
+        android:layout_marginTop="@dimen/dimen_margin_half"
+        android:paddingVertical="@dimen/dimen_margin_half"
+        android:paddingHorizontal="@dimen/dimen_margin"
+        android:text="Genre"
+        android:fontFamily="@font/font_primary_bold"
+        android:textStyle="bold"
+        android:textColor="#80FFFFFF"
+        android:textSize="@dimen/dimen_font_size_normal_large" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_genre_title">
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/recycler_view"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_above="@+id/progressbar"
+          android:paddingVertical="4dp"
+          android:paddingHorizontal="4dp"
+          app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+          android:orientation="horizontal"
+          tools:itemCount="2"
+          tools:listitem="@layout/movie_item_view" />
+
+      <ProgressBar
+          android:id="@+id/progressbar"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:layout_alignParentBottom="true"
+          android:layout_centerHorizontal="true"
+          android:indeterminateDrawable="@drawable/progress_drawable"
+          android:indeterminate="true"
+          android:layout_marginTop="@dimen/dimen_margin_half"
+          android:layout_marginStart="@dimen/dimen_margin_half"
+          android:layout_marginEnd="@dimen/dimen_margin_half"
+          android:layout_marginBottom="@dimen/dimen_margin_half" />
+
+    </RelativeLayout>
+
+  </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -26,11 +26,11 @@ class MoviesPresenter(
   }
 
   override fun getMovies(with_genres: Long, page: Int) {
-    viewContract?.onLoading()
+    viewContract?.onLoadingGetMovies()
     BaseApp.instance.retrofit.getMovieList(with_genres, page)
       .enqueue(object : Callback<MovieQuery> {
         override fun onFailure(call: Call<MovieQuery>, t: Throwable) {
-          viewContract?.onDismissLoading()
+          viewContract?.onDismissLoadingGetMovies()
           Log.e(TAG, "response onFailure: ${t.message.toString()}")
           viewContract?.onFailedGetMovies(t.message.toString())
         }
@@ -39,7 +39,7 @@ class MoviesPresenter(
           call: Call<MovieQuery>,
           response: retrofit2.Response<MovieQuery>
         ) {
-          viewContract?.onDismissLoading()
+          viewContract?.onDismissLoadingGetMovies()
           val items = response.body()?.movies ?: listOf()
           val totalPage = response.body()?.total_pages ?: 0
           val currentPage = response.body()?.page ?: 0

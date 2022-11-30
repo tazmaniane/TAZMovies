@@ -34,10 +34,9 @@ import com.taz.tazmovies.responses.MovieVideoResult
 import com.taz.tazmovies.responses.ReviewResult
 import com.taz.tazmovies.reviews.ReviewsContract
 import com.taz.tazmovies.reviews.ReviewsPresenter
-import com.taz.tazmovies.utils.DialogProgress
+import com.taz.tazmovies.reviews.view.ReviewsActivity
 import com.taz.tazmovies.utils.NumberUtils
 import com.taz.tazmovies.utils.TextUtils
-import kotlinx.android.synthetic.main.movie_detail_activity.btn_next_reviews
 
 class MovieDetailActivity : BaseActivity(),
 MovieVideoContract.ViewContract,
@@ -59,18 +58,11 @@ ReviewsContract.ViewContract {
 
   lateinit var _binding: MovieDetailActivityBinding
 
-  var dialogProgress: DialogProgress? = null
   var mReviewsPresenter: ReviewsPresenter? = null
   var movieVideoPresenter: MovieVideoPresenter? = null
 
   var mReviewsAdapter: ReviewsAdapter? = null
   var movieDetailResult: MovieDetailResult? = null
-
-  var visibleItemCount = 0
-  var totalItemCount = 0
-  var pastItemsVisible = 0
-  var totalPageReview = 0
-  var currentPageReview = 0
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -126,7 +118,7 @@ ReviewsContract.ViewContract {
     _binding.recyclerViewReviews.layoutManager = LinearLayoutManager(this)
     _binding.recyclerViewReviews.adapter = mReviewsAdapter
     _binding.btnNextReviews.setOnClickListener {
-      getReviews(movieDetailResult)
+      startActivity(ReviewsActivity.getIntent(this, movieDetailResult))
     }
     /*
     // this is for endless scroll
@@ -166,15 +158,7 @@ ReviewsContract.ViewContract {
       mReviewsPresenter = ReviewsPresenter(this)
         .setViewContract(this)
     }
-    if(totalPageReview == 0) {
-      currentPageReview = 1
-      mReviewsPresenter?.getReviews(movie_id = movieDetailResult?.id ?: 0, page = currentPageReview)
-    } else {
-      if(currentPageReview < totalPageReview) {
-        currentPageReview++
-        mReviewsPresenter?.getReviews(movie_id = movieDetailResult?.id ?: 0, page = currentPageReview)
-      }
-    }
+    mReviewsPresenter?.getReviews(movie_id = movieDetailResult?.id ?: 0, page = 1)
   }
 
   private fun addActors(actors: List<Actor>) {
@@ -185,6 +169,7 @@ ReviewsContract.ViewContract {
     for(genre in genres){
       val chip = Chip(this)
       chip.id = ViewCompat.generateViewId()
+      chip.setPadding(10, 5, 10, 5)
       chip.text = genre.name
       chip.textAlignment = TEXT_ALIGNMENT_CENTER
       chip.isCloseIconVisible = false
@@ -200,26 +185,23 @@ ReviewsContract.ViewContract {
   }
 
   override fun onLoading() {
-    if(dialogProgress == null) dialogProgress = DialogProgress(this)
-    dialogProgress?.show()
+    showLoading()
   }
 
   override fun onDismissLoading() {
-    dialogProgress?.dismiss()
+    dismissLoading()
   }
 
   override fun onLoadingReview() {
     _binding.progressbarReview.visibility = VISIBLE
-    btn_next_reviews.visibility = GONE
+    _binding.tvNoReview.visibility = GONE
+    _binding.btnNextReviews.visibility = GONE
   }
 
   override fun onDismissLoadingReview() {
     _binding.progressbarReview.visibility = GONE
-    if(currentPageReview < totalPageReview){
-      btn_next_reviews.visibility = VISIBLE
-    } else {
-      btn_next_reviews.visibility = GONE
-    }
+    _binding.tvNoReview.visibility = GONE
+    _binding.btnNextReviews.visibility = VISIBLE
   }
 
   override fun onSuccessGetReviews(
@@ -229,18 +211,14 @@ ReviewsContract.ViewContract {
     totalResult: Int
   ) {
     Log.d(MoviesActivity.TAG, "onSuccessGetMovies")
-    this.currentPageReview = currentPage
-    this.totalPageReview = totalPage
-    if(this.currentPageReview <= 1){
-      mReviewsAdapter?.setItems(items)
-    } else {
-      mReviewsAdapter?.addItems(items)
-    }
+    mReviewsAdapter?.setItems(items)
     _binding.tvReviewTitle.text = "Review (${mReviewsAdapter?.itemCount})"
-    if(currentPageReview < totalPageReview){
-      btn_next_reviews.visibility = VISIBLE
+    if(items.isNotEmpty()){
+      _binding.tvNoReview.visibility = GONE
+      // _binding.btnNextReviews.visibility = VISIBLE
     } else {
-      btn_next_reviews.visibility = GONE
+      _binding.tvNoReview.visibility = VISIBLE
+      // _binding.btnNextReviews.visibility = GONE
     }
   }
 
