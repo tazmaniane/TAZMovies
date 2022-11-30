@@ -77,16 +77,16 @@ class ReviewsActivity : BaseActivity(),
 
   private fun initAdapter() {
     mReviewsAdapter = ReviewsAdapter(this)
-    _binding.recyclerView.layoutManager = GridLayoutManager(this, 1)
-    _binding.recyclerView.adapter = mReviewsAdapter
-    _binding.recyclerView.addOnScrollListener(object: RecyclerView.OnScrollListener() {
+    _binding.recyclerViewReviews.layoutManager = GridLayoutManager(this, 1)
+    _binding.recyclerViewReviews.adapter = mReviewsAdapter
+    _binding.recyclerViewReviews.addOnScrollListener(object: RecyclerView.OnScrollListener() {
       override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
         super.onScrolled(recyclerView, dx, dy)
         if(dy > 0){
           // check scroll down
-          visibleItemCount = _binding.recyclerView.layoutManager?.childCount ?: 0
-          totalItemCount = _binding.recyclerView.layoutManager?.itemCount ?: 0
-          pastItemsVisible = (_binding.recyclerView.layoutManager as GridLayoutManager).findFirstVisibleItemPosition()
+          visibleItemCount = _binding.recyclerViewReviews.layoutManager?.childCount ?: 0
+          totalItemCount = _binding.recyclerViewReviews.layoutManager?.itemCount ?: 0
+          pastItemsVisible = (_binding.recyclerViewReviews.layoutManager as GridLayoutManager).findFirstVisibleItemPosition()
           // if(_binding.progressbar.visibility == VISIBLE) {
             if((visibleItemCount + pastItemsVisible) >= totalItemCount) {
               if(currentPage < totalPage){
@@ -140,6 +140,13 @@ class ReviewsActivity : BaseActivity(),
       mReviewsAdapter?.setItems(items)
     } else {
       mReviewsAdapter?.addItems(items)
+    }
+    if(items.isNotEmpty()){
+      _binding.tvNoReview.visibility = GONE
+      // _binding.btnNextReviews.visibility = VISIBLE
+    } else {
+      _binding.tvNoReview.visibility = VISIBLE
+      // _binding.btnNextReviews.visibility = GONE
     }
   }
 

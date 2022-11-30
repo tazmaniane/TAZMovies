@@ -159,31 +159,63 @@
             android:layout_marginTop="@dimen/dimen_margin"
             android:orientation="vertical">
 
-          <TextView
-              android:id="@+id/tv_review_title"
+          <LinearLayout
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:paddingVertical="10dp"
-              android:paddingHorizontal="@dimen/dimen_margin"
-              android:text="Review"
-              android:fontFamily="@font/font_primary_bold"
-              android:textStyle="bold"
-              android:textColor="#80FFFFFF"
-              android:textSize="@dimen/dimen_font_size_normal_large" />
+              android:orientation="horizontal">
 
-          <androidx.recyclerview.widget.RecyclerView
-              android:id="@+id/recycler_view_reviews"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:paddingVertical="4dp"
-              android:paddingHorizontal="4dp"
-              android:nestedScrollingEnabled="false"
-              tools:itemCount="1"
-              tools:listitem="@layout/review_item_view" />
+            <TextView
+                android:id="@+id/tv_review_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="@dimen/dimen_margin"
+                android:text="Review"
+                android:fontFamily="@font/font_primary_bold"
+                android:textStyle="bold"
+                android:textColor="#80FFFFFF"
+                android:textSize="@dimen/dimen_font_size_normal_large" />
+
+
+            <TextView
+                android:id="@+id/btn_next_reviews"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_button_min_height"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="@dimen/dimen_margin"
+                android:paddingRight="@dimen/dimen_margin"
+                android:layout_gravity="center"
+                android:text="Lihat Semua"
+                android:textColor="@android:color/white"
+                android:background="?attr/selectableItemBackground"
+                android:textSize="@dimen/dimen_font_size_small"
+                android:fontFamily="@font/font_primary_bold"
+                android:textStyle="bold"
+                android:gravity="center"
+                app:drawableRightCompat="@drawable/ic_chevron_right"
+                app:drawableTint="@android:color/white"
+                app:drawableEndCompat="@drawable/ic_chevron_right" />
+
+          </LinearLayout>
 
           <RelativeLayout
               android:layout_width="match_parent"
               android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_reviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="4dp"
+                android:paddingHorizontal="4dp"
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="1"
+                tools:listitem="@layout/review_item_view" />
 
             <TextView
                 android:id="@+id/tv_no_review"
@@ -204,29 +236,6 @@
                 android:fontFamily="@font/font_primary"
                 android:textStyle="normal"
                 android:gravity="center"/>
-
-            <TextView
-                android:id="@+id/btn_next_reviews"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/dimen_button_min_height"
-                android:layout_centerHorizontal="true"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:paddingLeft="8dp"
-                android:paddingStart="8dp"
-                android:paddingEnd="14dp"
-                android:paddingRight="14dp"
-                android:layout_gravity="center"
-                android:text="Lihat Semua"
-                android:textColor="@android:color/white"
-                android:background="?attr/selectableItemBackground"
-                android:textSize="@dimen/dimen_font_size_small"
-                android:fontFamily="@font/font_primary"
-                android:textStyle="normal"
-                android:gravity="center"
-                app:drawableRightCompat="@drawable/ic_chevron_right"
-                app:drawableTint="@android:color/white"
-                app:drawableEndCompat="@drawable/ic_chevron_right" />
 
             <ProgressBar
                 android:id="@+id/progressbar_review"

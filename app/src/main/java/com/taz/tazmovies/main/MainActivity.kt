@@ -94,7 +94,7 @@ class MainActivity : BaseActivity(),
           getMovieDetail(movieResult.id)
         }
       })
-    _binding.recyclerView.layoutManager = GridLayoutManager(this, 3)
+    _binding.recyclerView.layoutManager = GridLayoutManager(this, 2)
     _binding.recyclerView.adapter = mMoviesAdapter
     _binding.recyclerView.addOnScrollListener(object: RecyclerView.OnScrollListener() {
       override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
@@ -160,6 +160,8 @@ class MainActivity : BaseActivity(),
     _binding.tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener {
       override fun onTabSelected(tab: TabLayout.Tab?) {
         mGenreResult = mGenreItems[tab?.position ?: 0]
+        totalPage = 0
+        currentPage = 0
         getMovies(mGenreResult)
       }
 
@@ -170,6 +172,8 @@ class MainActivity : BaseActivity(),
     _binding.tabLayout.selectTab(firstTab)
     _binding.tabLayout.isSelected = true
     mGenreResult = if(mGenreItems.isNotEmpty()) mGenreItems[0] else null
+    totalPage = 0
+    currentPage = 0
     getMovies(mGenreResult)
   }
 

@@ -59,7 +59,7 @@
           android:layout_height="match_parent"
           android:layout_above="@+id/progressbar"
           android:paddingVertical="4dp"
-          android:paddingHorizontal="4dp"
+          android:paddingHorizontal="@dimen/card_view_margin"
           app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
           android:orientation="horizontal"
           tools:itemCount="2"
