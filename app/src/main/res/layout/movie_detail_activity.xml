@@ -195,7 +195,6 @@
                 android:background="?attr/selectableItemBackground"
                 android:textSize="@dimen/dimen_font_size_small"
                 android:fontFamily="@font/font_primary_bold"
-                android:textStyle="bold"
                 android:gravity="center"
                 app:drawableRightCompat="@drawable/ic_chevron_right"
                 app:drawableTint="@android:color/white"
